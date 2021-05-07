@@ -19,7 +19,7 @@ public class IndexServlet extends HttpServlet {
                         "</head>\n" +
                         "<body align=\"center\">\n" +
                         "<h1> time is passing </h1>\n" +
-                        "<a href=\"/students\">all students</a> | <a href=\"/students/add\">add student</a>\n" +
+                        "<a href=\"/school/students\">all students</a> | <a href=\"/school/students/add\">add student</a>\n" +
                         "</body>\n" +
                         "</html>");
     }

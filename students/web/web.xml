@@ -21,7 +21,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>AddStudent</servlet-name>
-        <servlet-class>com.avp.myservlets.AllStudents</servlet-class>
+        <servlet-class>com.avp.myservlets.AddStudent</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddStudent</servlet-name>

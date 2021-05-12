@@ -37,11 +37,11 @@ public class AllStudents extends HttpServlet {
         for (Student s : Student.total) {
             out.println(
                     " <tr>\n" +
-                            " <td></td>\n" +
-                            " <td></td>\n" +
-                            " <td></td>\n" +
-                            " <td></td>\n" +
-                            " <td></td>\n" +
+                            " <td>" + s.getId() + "</td>\n" +
+                            " <td>" + s.getName() + "</td>\n" +
+                            " <td>" + s.getLastName() + "</td>\n" +
+                            " <td>" + s.getEmail() + "</td>\n" +
+                            " <td>" + s.getAge() + "</td>\n" +
                             " </tr>\n");
         }
         out.println(

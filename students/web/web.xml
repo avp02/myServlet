@@ -27,4 +27,12 @@
         <servlet-name>AddStudent</servlet-name>
         <url-pattern>/students/add</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>StudentCard</servlet-name>
+        <servlet-class>com.avp.myservlets.StudentCard</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentCard</servlet-name>
+        <url-pattern>/student</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,5 +1,7 @@
 package com.avp.myservlets;
 
+import com.avp.bean.Student;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +15,18 @@ public class AddStudent extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LocalDateTime time = LocalDateTime.now();
         PrintWriter out = resp.getWriter();
+
+        String name = req.getParameter("name");
+        String lastName = req.getParameter("lastName");
+        int age = 0;
+        try {
+            age = Integer.valueOf(req.getParameter("age"));
+        } catch (Exception e) {
+
+        }
+
+        Student student = new Student(Student.total.size() + 1L, name, lastName, age);
+        Student.total.add(student);
 
         out.println("<!DOCTYPE html>\n" +
                         "<html lang=\"en\">\n" +

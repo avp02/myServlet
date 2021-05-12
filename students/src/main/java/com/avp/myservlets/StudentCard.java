@@ -14,8 +14,7 @@ public class StudentCard extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = 0;
         if(Student.total.size()==0) {
-            Student.total.add(new Student(0L, "Maksim", "Shelkovich",
-                    "my@email", 35));
+            Student.total.add(new Student(0L, "Maksim", "Shelkovich", 35));
         }
         Student student = Student.total.get(id);
 
@@ -32,10 +31,10 @@ public class StudentCard extends HttpServlet {
                 " <tr>\n" +
                 " <td>\n" +
                 " <img src=\"https://upload.wikimedia.org /wikipedia/commons/a/a0/Reuni%C3%A3o_com_o_ator_norteamericano_Keanu_Reeves_%28cropped%29.jpg\"\n" +
-                " width=\"50px\"\n" +
-                " height=\"50px\"/>\n" +
+                " width=\"150px\"\n" +
+                " height=\"150px\"/>\n" +
                 " </td>\n" +
-                " <td>"+student.getName() + " " + student.getLastName() + " <br />" + student.getEmail() +"</td>\n" +
+                " <td>"+student.getName() + " " + student.getLastName() + " <br /></td>\n" +
         " </tr>\n" +
                 "</table>\n" +
                 "</body>\n" +

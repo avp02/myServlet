@@ -13,8 +13,13 @@ public class StudentCard extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = 0;
+        try {
+            id = Integer.valueOf(req.getParameter("id"));
+        } catch (Exception e) {
+
+        }
         if(Student.total.size()==0) {
-            Student.total.add(new Student(0L, "Maksim", "Shelkovich", 35));
+            Student.total.add(new Student(0, "Maksim", "Shelkovich", 35));
         }
         Student student = Student.total.get(id);
 

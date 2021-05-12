@@ -13,7 +13,7 @@ public class AllStudents extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if(Student.total.size()==0) {
-            Student.total.add(new Student(0L, "Maksim", "Shelkovich", 35));
+            Student.total.add(new Student(0, "Maksim", "Shelkovich", 35));
         }
         PrintWriter out = resp.getWriter();
         out.println("" +
@@ -37,7 +37,7 @@ public class AllStudents extends HttpServlet {
             out.println(
                     " <tr>\n" +
                             " <td>" + s.getId() + "</td>\n" +
-                            " <td>" + s.getName() + "</td>\n" +
+                            " <td><a href=\"/school/student?id="  + s.getId() + "\">" + s.getName() + "</a></td>\n" +
                             " <td>" + s.getLastName() + "</td>\n" +
 //                            " <td>" + s.getEmail() + "</td>\n" +
                             " <td>" + s.getAge() + "</td>\n" +

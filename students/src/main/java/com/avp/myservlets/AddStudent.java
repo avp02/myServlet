@@ -42,7 +42,7 @@ public class AddStudent extends HttpServlet {
         } catch (Exception e) {
 
         }
-        Student student = new Student(Student.total.size() + 1L, name, lastName, age);
+        Student student = new Student(Student.total.size(), name, lastName, age);
         Student.total.add(student);
         resp.sendRedirect("/school/students");
 

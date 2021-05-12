@@ -16,7 +16,7 @@ public class Student {
 
     public static List<Student> total = new ArrayList<>();
 
-    private Long id;
+    private Integer id;
     private String name;
     private String lastName;
 //    private String email;

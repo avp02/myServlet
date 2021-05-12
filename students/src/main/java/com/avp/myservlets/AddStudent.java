@@ -44,7 +44,7 @@ public class AddStudent extends HttpServlet {
         }
         Student student = new Student(Student.total.size() + 1L, name, lastName, age);
         Student.total.add(student);
-        req.getRequestDispatcher("/students").forward(req, resp);
+        resp.sendRedirect("/school/students");
 
     }
 }

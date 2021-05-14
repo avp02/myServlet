@@ -2,6 +2,7 @@ package com.avp.myservlets;
 
 import com.avp.bean.Student;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,9 +13,10 @@ import java.io.PrintWriter;
 public class AllStudents extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(Student.total.size()==0) {
-            Student.total.add(new Student(0, "Maksim", "Shelkovich", 35));
-        }
+
+        RequestDispatcher view = req.getRequestDispatcher("AllStudents.jsp");
+        view.forward(req, resp);
+
         PrintWriter out = resp.getWriter();
         out.println("" +
                 "<!DOCTYPE html>\n" +
@@ -39,7 +41,6 @@ public class AllStudents extends HttpServlet {
                             " <td>" + s.getId() + "</td>\n" +
                             " <td><a href=\"/school/student?id="  + s.getId() + "\">" + s.getName() + "</a></td>\n" +
                             " <td>" + s.getLastName() + "</td>\n" +
-//                            " <td>" + s.getEmail() + "</td>\n" +
                             " <td>" + s.getAge() + "</td>\n" +
                             " </tr>\n");
         }

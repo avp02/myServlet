@@ -1,4 +1,5 @@
 <%@ page import="com.avp.bean.Student" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang=en>
 <head>
@@ -6,7 +7,7 @@
  <title>timer</title>
 </head>
 <body align=center>
-<h1> time is passing. people changed </h1>
+<h1> Vavan changed title</h1>
 <table align=center>
  <tr>
      <th>id</th>
@@ -17,8 +18,9 @@
      </tr>
 
     <%
-        for (Student s : Student.total) {
-            out.println(
+        List<Student> studentList = (List<Student>)request.getAttribute("studentList");
+        for (Student s : studentList) {
+            response.getWriter().print(
                     " <tr>\n" +
                             " <td>" + s.getId() + "</td>\n" +
                             " <td><a href=\"/school/student?id="  + s.getId() + "\">" + s.getName() + "</a></td>\n" +
